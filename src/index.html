@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrivenEats</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="overlay hidden">
+        <div class="modal">
+            <h1>Confirme seu pedido</h1>
+            <div class="order-info"></div>
+
+            <a class="whatsapp-button" target="_blank">Tudo certo, pode pedir!</a>
+            <button class="cancel-button" onclick="cancelOrder()">Cancelar</button>
+        </div>
+    </div>
+
+    <div>
+        <div class="header">
+            <h1>DrivenEats</h1>
+            <h2>Sua comida em 6 minutos</h2>
+        </div>
+
+        <div class="content">
+            <h3 class="category">Primeiro, seu prato</h3>
+
+            <div class="meals-food">
+                <div class="card" onclick="selectItem(this, 'food')">
+                    <img src="../img/pf_frango.jpg" />
+                    <p class="title">Prato de Frango</p>
+                    <p class="description">Acompanha arroz, feijão e salada</p>
+                    <p class="price">R$14,90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div class="card" onclick="selectItem(this, 'food')">
+                    <img src="../img/pf_calabresa.png" />
+                    <p class="title">Prato de Calabresa</p>
+                    <p class="description">Acompanha arroz, feijão e salada</p>
+                    <p class="price">R$15,90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div class="card" onclick="selectItem(this, 'food')">
+                    <img src="../img/pf_carne.jpg" />
+                    <p class="title">Prato de Calabresa</p>
+                    <p class="description">Acompanha arroz, feijão e salada</p>
+                    <p class="price">R$18,90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+            </div>
+
+            <h3 class="category">Agora, sua bebida</h3>
+            <div class="meals-drink">
+                <div class="card" onclick="selectItem(this, 'drink')">
+                    <img src="../img/coca.png" />
+                    <p class="title">Coca-cola</p>
+                    <p class="description">Refrigerante geladinho</p>
+                    <p class="price">R$4,90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div class="card" onclick="selectItem(this, 'drink')">
+                    <img src="../img/fanta.png" />
+                    <p class="title">Fanta</p>
+                    <p class="description">Refrigerante geladinho</p>
+                    <p class="price">R$5,90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div class="card" onclick="selectItem(this, 'drink')">
+                    <img src="../img/suco.png" />
+                    <p class="title">Suco de Laranja</p>
+                    <p class="description">Suco delicioso</p>
+                    <p class="price">R$8,90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+            </div>
+
+            <h3 class="category">Por fim, sua sobremesa</h3>
+            <div class="meals-dessert">
+                <div class="card" onclick="selectItem(this, 'dessert')">
+                    <img src="../img/brownie.jpg" />
+                    <p class="title">Brownie</p>
+                    <p class="description">Delícia de chocolate</p>
+                    <p class="price">R$7,90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div class="card" onclick="selectItem(this, 'dessert')">
+                    <img src="../img/pudim.jpg" />
+                    <p class="title">Pudim</p>
+                    <p class="description">Feito pela vovó</p>
+                    <p class="price">R$6,90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div class="card" onclick="selectItem(this, 'dessert')">
+                    <img src="../img/mouse.jpg" />
+                    <p class="title">Mouse</p>
+                    <p class="description">Fofinho</p>
+                    <p class="price">R$3,90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button class="order-button disabled" onclick="showModal()">Selecione os 3 itens <br /> para fechar o pedido</button>
+        </div>
+    </div>
+</body>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
+<script src="index.js"></script>
+
+</html>
