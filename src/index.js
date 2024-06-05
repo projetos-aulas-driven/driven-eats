@@ -42,31 +42,27 @@ function showModal() {
     const orderInfo = document.querySelector(`.order-info`)
     orderInfo.innerHTML = `
         <div class="item">
-            <p>${foodName}</p>
-            <p>${foodPrice}</p>
+            <p>${foodName}: ${foodPrice}</p>
         </div>
         <div class="item">
-            <p>${drinkName}</p>
-            <p>${drinkPrice}</p>
+            <p>${drinkName}: ${drinkPrice}</p>
         </div>
         <div class="item">
-            <p>${dessertName}</p>
-            <p>${dessertPrice}</p>
+            <p>${dessertName}: ${dessertPrice}</p>
         </div>
         <div class="item">
-            <p class="total-name">TOTAL</p>
-            <p class="total-price">R$${calculateTotal()}</p>
+            <p class="total-name">TOTAL: ${calculateTotal()}</p>
         </div>
     `
     addWhatsAppLink()
 }
 
 function calculateTotal() {
-    const foodPriceNum = Number(foodPrice.replace(",", ".").replace("R$", ""))
-    const drinkPriceNum = Number(drinkPrice.replace(",", ".").replace("R$", ""))
-    const dessertPriceNum = Number(dessertPrice.replace(",", ".").replace("R$", ""))
+    const foodPriceNum = Number(foodPrice)
+    const drinkPriceNum = Number(drinkPrice)
+    const dessertPriceNum = Number(dessertPrice)
 
-    return (foodPriceNum + drinkPriceNum + dessertPriceNum).toFixed(2).toString().replace(".", ",")
+    return (foodPriceNum + drinkPriceNum + dessertPriceNum).toFixed(2)
 }
 
 function cancelOrder() {
@@ -79,7 +75,7 @@ function addWhatsAppLink() {
         - Prato: ${foodName}
         - Bebida: ${drinkName}
         - Sobremesa: ${dessertName}
-        Total: R$${calculateTotal()}`)
+        Total: ${calculateTotal()}`)
 
     const whatsAppButton = document.querySelector(`.whatsapp-button`)
     whatsAppButton.setAttribute("href", `https://wa.me/5511981094010/?text=${message}`)
